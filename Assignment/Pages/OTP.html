@@ -94,5 +94,19 @@
         </div>
       </div>
     </div>
+    <script>
+    function encryptMessage() {
+      var message = document.getElementById('message').value;
+      var password = document.getElementById('password').value;
+      var encryptedMessage = CryptoJS.one-time-pad.encrypt(message, password).toString();
+      document.getElementById('result').value = encryptedMessage;
+    }
+    function decryptMessage() {
+      var message = document.getElementById('message').value;
+      var password = document.getElementById('password').value;
+      var decryptedMessage = CryptoJS.one-time-pad.decrypt(message, password).toString(CryptoJS.enc.Utf8);
+      document.getElementById('result').value = decryptedMessage;
+    }
+  </script>
   </body>
 </html>
